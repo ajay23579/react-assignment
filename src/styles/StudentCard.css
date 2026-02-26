@@ -1,0 +1,124 @@
+.student-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column; /* stack info nicely */
+  gap: 0.6rem;
+  min-width: 300px; /* wider cards */
+  max-width: 400px;
+  font-size: 0.9rem;
+  min-height: 220px; /* ensure roughly same height */
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.top-badge {
+  background: #f1c40f;
+  color: black;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.4rem;
+}
+
+.card-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.card-info span {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.4rem;
+}
+
+.gpa {
+  background: #3498db;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.4rem;
+}
+
+.status.absent {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.status.present {
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+/* Card actions always stick to bottom */
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: auto; /* push buttons to bottom */
+}
+
+.delete-btn, .toggle-btn {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  border: none;
+}
+
+.delete-btn {
+  background: #e74c3c;
+  color: white;
+}
+
+.toggle-btn {
+  background: #3498db;
+  color: white;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* dynamic columns */
+  gap: 1rem; /* space between cards */
+  padding: 1rem 0;
+}
+
+/* Card hover effect */
+.cards-container .student-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cards-container .student-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Responsive grid */
+@media (max-width: 700px) {
+  .cards-container {
+    grid-template-columns: 1fr; /* single column */
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  }
+}
+
+@media (min-width: 1025px) {
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  }
+}

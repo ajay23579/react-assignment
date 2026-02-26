@@ -1,0 +1,74 @@
+:root {
+ --space-xs:0.5rem;
+ --space-sm: 0.75rem;
+ --space-md: 1rem;     
+ --space-lg: 1.5rem;   
+ --space-xl: 2rem;     
+ --space-2xl: 3rem;
+ --gutter: var(--space-md);
+
+ *, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+  --bg: hsla(222, 47%, 7%, 1);       /* Solid Darker Background */
+  --surface: hsla(222, 47%, 12%, 1);  /* Card Surface */
+  --accent: hsla(210, 100%, 66%, 1);  /* Clean Blue */
+  --border: hsla(222, 47%, 20%, 1);   /* Subtle Border */
+  --text: hsla(0, 0%, 100%, 0.9);
+  --text-dim: hsla(0, 0%, 100%, 0.5);
+}
+
+body{
+  background-color: var(--bg);
+  font-family: 'Inter',system-ui,sans-serif;
+  color: var(--text);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  width: 100%;
+  max-width: 1100px;
+  padding: 3rem 2rem;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2rem;
+}
+
+.nav-group{
+  display: flex;
+  gap: 1rem;
+}
+
+.container {
+  padding-inline: var(--gutter); 
+}
+
+.toggle-btn{
+  background-color: var(--surface);
+  color: var(--text);
+  padding: 0.5rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+.toggle-btn:hover {
+  border-color: var(--accent);
+}
+.toggle-btn.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}

@@ -1,0 +1,16 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+/* Optional: add small animation on hover */
+.cards-container .student-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cards-container .student-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
